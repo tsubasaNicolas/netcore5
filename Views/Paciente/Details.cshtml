@@ -1,0 +1,64 @@
+@model Turnos.Models.Paciente
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+
+
+<div>
+    <h5>Paciente</h5>
+    <hr />
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card hoverable green accent-4">
+                <div class="card-content white-text">
+                    <span class="card-title">
+                        <h5><b> @Html.DisplayFor(model => model.Nombre), @Html.DisplayFor(model =>
+                                model.Apellido)</b></h5>
+                    </span>
+
+
+
+                    <dt>
+                        <h6>
+                            @Html.DisplayNameFor(modelo => modelo.Direccion): @Html.DisplayFor(modelo =>
+                            modelo.Direccion)
+                        </h6>
+                    </dt>
+
+                    <hr />
+                    <dt>
+                        <h6>
+
+                            @Html.DisplayNameFor(modelo => modelo.Telefono) : @Html.DisplayFor(modelo =>
+                            modelo.Telefono)
+                        </h6>
+                    </dt>
+                    <hr />
+
+                    <dt>
+                        <h6>
+
+                            @Html.DisplayNameFor(modelo => modelo.Email):@Html.DisplayFor(modelo => modelo.Email)
+                        </h6>
+                    </dt>
+                    <hr />
+
+                </div>
+                <div class="card-action blue-grey darken-2">
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="IdPaciente" />
+
+                        <a asp-action="Edit" asp-route-id="@Model.IdPaciente">Editar</a>
+                        <a asp-action="Index" class="right">Volver</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
